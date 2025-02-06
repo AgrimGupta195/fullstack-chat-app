@@ -10,7 +10,7 @@ import { app, server } from "./controllers/lib/socket.js";
 dotenv.config();
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
-app.use(express.json());
+app.use(express.json({limit:"5mb"}));
 app.use(cookieParser());
 app.use(cors({
     origin:"http://localhost:5173",
